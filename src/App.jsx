@@ -19,7 +19,7 @@ import RoomListingForm from "./pages/roomlistingform";
 import RoomListingPage from "./pages/roomlistingpage";
 // import PrivacyPolicy from "./pages/privacypolicy";
 import "./App.css";
-import DltAcc from "./components/dltacc";
+import DltAcc from "./components/DltAcc";
 import Logout from "./components/logout";
 import AddListing from "./pages/addlisting";
 import BhojnalayForm from "./pages/bhojnalayform";
