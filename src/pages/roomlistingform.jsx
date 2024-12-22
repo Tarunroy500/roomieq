@@ -14,7 +14,7 @@ import sing from "../assets/ac.svg";
 import dance from "../assets/hospital.svg";
 import food from "../assets/market.svg";
 import upload from "../assets/upload.svg";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import { toast } from "react-toastify";
 import Footer from "../components/footer";
 import ButtonGroup from "../components/ButtonGroup";

@@ -5,7 +5,7 @@ import triangle from "../assets/triangle.png";
 // import { useAuth } from "../../utils/LoginContext";
 import React from "react";
 import { useAuth } from "../../utils/contextLogin";
-import LoginComponent from "../components/login";
+import LoginComponent from "./login";
 import CouponsRewards from "../pages/CouponsRewards";
 import SideChat from "./SideChat";
 import { axiosI } from "../axios";

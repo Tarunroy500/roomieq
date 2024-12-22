@@ -17,7 +17,7 @@ import DownloadPromo from "../components/DownloadPromo";
 import Footer from "../components/footer";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useChatStore } from "../../utils/useChatStore";
