@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 import AppStore from "../assets/AppStore.svg";
 import GooglePlay from "../assets/GooglePlay.svg";
 import SecondPhone from "../assets/SecondPhone.svg";
-import Navbar from '../components/Navbar';
+import Navbar from "../components/Navbar";
 
 
 
