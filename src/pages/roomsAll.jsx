@@ -11,6 +11,7 @@ import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { axiosI } from "../axios";
 import { useLocation } from "../../utils/LocationContext";
+import Card from "../components/Card";
 
 function RoomsPage() {
   const [roomList, setRoomList] = useState([]);
@@ -209,34 +210,7 @@ function RoomsPage() {
                   <label className="text-lg">By Budget</label>
                   <label className="text-xs mb-4">Choose a range below</label>
                   <div className="flex items-center space-x-2">
-                    {/* <input
-                      type="number"
-                      placeholder="Min"
-                      className="w-1/2 border-[.5px] p-1 rounded-md"
-                      onChange={(e) =>
-                        setAdvanceFilter((prev) => ({
-                          ...prev,
-                          priceRange: {
-                            ...prev.priceRange,
-                            min: +e.target.value,
-                          },
-                        }))
-                      }
-                    />
-                    <input
-                      type="number"
-                      placeholder="Max"
-                      className="w-1/2 border-[.5px] p-1 rounded-md"
-                      onChange={(e) =>
-                        setAdvanceFilter((prev) => ({
-                          ...prev,
-                          priceRange: {
-                            ...prev.priceRange,
-                            max: +e.target.value,
-                          },
-                        }))
-                      }
-                    /> */}
+                   
                     <PriceRangeSlider
                       min={0}
                       max={100000}
@@ -447,33 +421,21 @@ function RoomsPage() {
               </div>
               {/* Grid Container */}
               <div id="listing">
-                {[1, 2, 3, 4, 2, 3, 4].map(() => (
-                  <div className="product">
-                    <div className="prod_photo">Photo</div>
-                    <div className="premium">
-                      <img src="crown.svg" alt="" />
-                    </div>
-                    <div className="title_heart">
-                      <div id="title">Title of the post</div>
-                      <div className="img_grp">
-                        <img src="heart.svg" alt="" />
-                        <img src="bluetick.svg" alt="" />
-                      </div>
-                    </div>
-                    <div className="prod_desc">
-                      2020 Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina
-                      Display,
-                    </div>
-                    <div className="price_city">
-                      <div className="price">$1024.99+</div>
-                      <div className="city">city/area, state..&gt;&gt;</div>
-                    </div>
-                    <div className="button">
-                      <button>
-                        Contanct now <img src="chat.svg" alt="" />
-                      </button>
-                    </div>
-                    <div className="prod_break"></div>
+                {roomList.map((room, index) => (
+                  <div key={index}>
+                    <Card
+                      title={room.roomName}
+                      desc={room.description}
+                      img={room.images?.[0]} // Safe navigation for images array
+                      price={room.monthlyMaintenance}
+                      location={room.location}
+                      link={`/room/${room._id}`}
+                      verified={room.uid?.verified || false}
+                      isFeatureListing={room.uid?.isFeatureListing}
+                      isWishlisted={wishlist.includes(room._id)}
+                      toggleWishlist={() => toggleWishlist(room._id)}
+                      distance={room.distance}
+                    />
                   </div>
                 ))}
               </div>
